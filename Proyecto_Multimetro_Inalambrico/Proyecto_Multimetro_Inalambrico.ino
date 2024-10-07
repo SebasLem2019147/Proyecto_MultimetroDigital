@@ -150,7 +150,7 @@ void medicion2M_ohms() {
   imprimirResistencia(resistencia);
 }
 
-//imprimir valores en pantalla OLED
+//imprimir valores de resistencias en pantalla OLED
 void imprimirResistencia(float resistencia) {
   if (resistencia >= 1e6) {
     display.clearDisplay();
@@ -214,10 +214,10 @@ float promedio_I(int muestras_I)
   float intencidad=0;
   for(int i=0;i<muestras_I;i++)
   {
-    sensorA1 = analogRead(A1) * (5.0 / 1023.0);//Leemos el sensor de corriente
+    sensorA1 = analogRead(A1) * (5.0 / 1023.0);
     intencidad=intencidad+(sensorA1-2.5)/sensibilidad; //Calculo para obtener el valor de la corriente
   }
-  intencidad=intencidad/muestras_I;//dividimos por 500 
+  intencidad=intencidad/muestras_I;
   return(intencidad);
 }
 
